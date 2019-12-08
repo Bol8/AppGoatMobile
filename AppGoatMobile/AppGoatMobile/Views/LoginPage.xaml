@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGoatMobile.Views.LoginPage"
+             BackgroundColor="#ffffff">
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="GOATLOGOPOSITIVO_7x2.png" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       WidthRequest="300"
+                       Margin="0,30,0,30"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

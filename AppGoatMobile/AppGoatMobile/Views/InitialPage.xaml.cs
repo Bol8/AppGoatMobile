@@ -33,7 +33,7 @@ namespace AppGoatMobile.Views
             else if (taps == 10)
             {
                 tokenSource2.Cancel();
-               // Application.Current.MainPage = new LoginPage();
+                Application.Current.MainPage = new LoginPage();
             }
         }
 
