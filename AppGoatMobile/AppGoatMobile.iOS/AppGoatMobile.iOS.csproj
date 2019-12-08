@@ -141,4 +141,7 @@
       <Name>AppGoatMobile</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GOATNEGATIVO_5x5.png" />
+  </ItemGroup>
 </Project>

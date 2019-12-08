@@ -13,8 +13,8 @@ namespace AppGoatMobile
         {
             InitializeComponent();
 
-
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new InitialPage();
         }
 
         protected override void OnStart()

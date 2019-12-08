@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGoatMobile.Views.InitialPage"
+             BackgroundColor="#3f4041">
+    <ContentPage.Content>
+        <Grid>
+            <Image HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   Source="GOATNEGATIVO_5x5.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_OnTapped"
+                        NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
