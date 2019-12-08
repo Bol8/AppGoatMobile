@@ -1,5 +1,4 @@
 ﻿using AppGoatMobile.Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -27,7 +26,11 @@ namespace AppGoatMobile.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+
+                        var nav = new NavigationPage(new ItemsPage());
+                        nav.BarBackgroundColor = Color.FromHex("#3f4041");
+                        MenuPages.Add(id, nav);
+
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
