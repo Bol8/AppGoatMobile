@@ -12,6 +12,7 @@ namespace AppGoatMobile.Views
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
+
         public MenuPage()
         {
             InitializeComponent();
