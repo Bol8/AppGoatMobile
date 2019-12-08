@@ -28,7 +28,6 @@ namespace AppGoatMobile.Views
                     case (int)MenuItemType.Browse:
 
                         var nav = new NavigationPage(new ItemsPage());
-                        nav.BarBackgroundColor = Color.FromHex("#3f4041");
                         MenuPages.Add(id, nav);
 
                         break;
