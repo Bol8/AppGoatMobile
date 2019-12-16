@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppGoatMobile.Models;
 using AppGoatMobile.Services;
+using AppGoatMobile.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,11 +13,13 @@ namespace AppGoatMobile.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
-	{
+    {
+        private LoginViewModel _loginViewModel;
+
 		public LoginPage ()
 		{
 			InitializeComponent();
-            BindingContext = this;
+            BindingContext = _loginViewModel = new LoginViewModel();
             LoadCacheUserData();
         }
 
@@ -24,6 +27,8 @@ namespace AppGoatMobile.Views
         {
             try
             {
+                _loginViewModel.Login();
+
                 var user = new User(txtEmail.Text, txtPassword.Text);
                 if (user.HasValidCredentials())
                 {

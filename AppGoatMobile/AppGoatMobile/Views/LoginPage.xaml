@@ -19,10 +19,10 @@
                        Margin="0,30,0,30"/>
 
                 <StackLayout Grid.Row="1" Padding="30,35">
-                    <Entry x:Name="txtEmail" Placeholder="Correo electronico" PlaceholderColor="#3f4041"/>
-                    <Entry x:Name="txtPassword" Placeholder="Contraseña" PlaceholderColor="#3f4041" IsPassword="True"/>
+                    <Entry x:Name="txtEmail" Text="{Binding UserName}" Placeholder="Correo electronico" PlaceholderColor="#3f4041"/>
+                    <Entry x:Name="txtPassword" Text="{Binding Password}" Placeholder="Contraseña" PlaceholderColor="#3f4041" IsPassword="True"/>
                     <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
-                        <Switch IsToggled="false" />
+                        <Switch IsToggled="{Binding RememberCredentials}" />
                         <Label Text="Recordar Contraseña?"
                                Margin="0,5,0,0"/>
                     </StackLayout>
