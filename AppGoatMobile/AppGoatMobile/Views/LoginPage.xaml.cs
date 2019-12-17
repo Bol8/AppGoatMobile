@@ -14,13 +14,14 @@ namespace AppGoatMobile.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
     {
-        private LoginViewModel _loginViewModel;
+        private readonly LoginViewModel _loginViewModel;
 
 		public LoginPage ()
 		{
 			InitializeComponent();
             BindingContext = _loginViewModel = new LoginViewModel();
-            LoadCacheUserData();
+
+
         }
 
         private void BtnSigIn_OnClicked(object sender, EventArgs e)
@@ -28,17 +29,19 @@ namespace AppGoatMobile.Views
             try
             {
                 _loginViewModel.Login();
+                
+                //_loginViewModel.Login();
 
-                var user = new User(txtEmail.Text, txtPassword.Text);
-                if (user.HasValidCredentials())
-                {
-                    CacheProvider.Set("AppGoatUser",user, new DateTimeOffset(new DateTime(2020)));
-                    Application.Current.MainPage = new MainPage();
-                }
-                else
-                {
-                    DisplayAlert("Warning", "Invalid Credentials !!!", "Accept");
-                }
+                //var user = new User(txtEmail.Text, txtPassword.Text);
+                //if (user.HasValidCredentials())
+                //{
+                //    CacheProvider.Set("AppGoatUser",user, new DateTimeOffset(new DateTime(2020)));
+                //    Application.Current.MainPage = new MainPage();
+                //}
+                //else
+                //{
+                //    DisplayAlert("Warning", "Invalid Credentials !!!", "Accept");
+                //}
             }
             catch (Exception exception)
             {
@@ -46,13 +49,6 @@ namespace AppGoatMobile.Views
             }
         }
 
-        private void LoadCacheUserData()
-        {
-            var user = CacheProvider.Get<User>("AppGoatUser");
-            if(user == null) return;
-
-            txtEmail.Text = user.UserName;
-            txtPassword.Text = user.Password;
-        } 
+      
     }
 }
