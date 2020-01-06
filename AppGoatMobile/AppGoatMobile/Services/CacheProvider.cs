@@ -15,6 +15,12 @@ namespace AppGoatMobile.Services
         public static void Set<T>(string keyCache, T value, DateTimeOffset absoluteExpiry)
         {
             _cache.Set(keyCache, value);
+
+        }
+
+        public static void Remove(string keyCache)
+        {
+            _cache.Remove(keyCache);
         }
 
         public static T Get<T>(string keyCache)

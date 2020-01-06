@@ -5,6 +5,8 @@ using AppGoatMobile.Views;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppGoatMobile.ViewModels
@@ -12,12 +14,17 @@ namespace AppGoatMobile.ViewModels
     public class LoginViewModel : INotifyPropertyChanged
     {
         private const string USER_DATA_CACHE_KEY = "AppGoatUserCredentials";
+
         private bool _rememberCredentials;
         private string _userName;
         private string _password;
 
+        private AppService _appService;
+
+
         public LoginViewModel()
         {
+            _appService = new AppService();
             LoadCacheUserData();
         }
 
@@ -52,14 +59,26 @@ namespace AppGoatMobile.ViewModels
             }
         }
 
-        public void Login()
+        public ICommand Login
         {
-            if (_rememberCredentials)
+            get
             {
-                SaveCacheUserData();
-            }
+                return new Command(async () =>
+                {
+                    await _appService.LoginAsync(_userName, _password);
 
-            Application.Current.MainPage = new MainPage();
+                    if (_rememberCredentials)
+                    {
+                        SaveCacheUserData();
+                    }
+                    else
+                    {
+                        CacheProvider.Remove(USER_DATA_CACHE_KEY);
+                    }
+
+                    Application.Current.MainPage = new MainPage();
+                });
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -69,7 +88,6 @@ namespace AppGoatMobile.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
 
         private void LoadCacheUserData()
         {
@@ -89,6 +107,7 @@ namespace AppGoatMobile.ViewModels
                 Password = _password,
                 RememberCredentials = _rememberCredentials
             };
+
             CacheProvider.Set(USER_DATA_CACHE_KEY, credentials, new DateTimeOffset(new DateTime(2020)));
         }
     }

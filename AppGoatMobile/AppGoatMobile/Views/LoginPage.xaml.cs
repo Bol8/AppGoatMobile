@@ -28,7 +28,7 @@ namespace AppGoatMobile.Views
         {
             try
             {
-                _loginViewModel.Login();
+              //  _loginViewModel.Login();
                 
                 //_loginViewModel.Login();
 

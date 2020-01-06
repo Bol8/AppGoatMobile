@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "413138094242",
+    "firebase_url": "https://app-goat.firebaseio.com",
+    "project_id": "app-goat",
+    "storage_bucket": "app-goat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413138094242:android:e6a036b13b631b9d9eeffb",
+        "android_client_info": {
+          "package_name": "com.companyname.AppGoatMobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413138094242-l4a8tirtt73unacuj3nmrhf3oipfe9oh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqEBmMPNLCzVAIYlOAUe0mf0m0YaM9QCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413138094242-l4a8tirtt73unacuj3nmrhf3oipfe9oh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
