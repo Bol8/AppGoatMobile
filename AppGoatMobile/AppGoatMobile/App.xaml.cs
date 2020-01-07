@@ -1,10 +1,8 @@
-﻿using AppGoatMobile.Utils;
-using AppGoatMobile.Views;
+﻿using AppGoatMobile.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Device = Microsoft.AppCenter.Device;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppGoatMobile
@@ -52,10 +50,10 @@ namespace AppGoatMobile
 
         private void PushOnPushNotificationReceived(object sender, PushNotificationReceivedEventArgs e)
         {
-           Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
-               {
-                   Current.MainPage.DisplayAlert(e.Title, e.Message, "OK");
-               });
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                {
+                    Current.MainPage.DisplayAlert(e.Title, e.Message, "OK");
+                });
         }
 
         protected override void OnSleep()
